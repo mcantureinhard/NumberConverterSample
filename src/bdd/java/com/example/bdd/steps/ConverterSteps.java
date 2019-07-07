@@ -1,13 +1,16 @@
 package com.example.bdd.steps;
 
 import com.example.application.usecases.AvailableConversionsUseCase;
+import com.example.application.usecases.NumberConverterUseCase;
 import com.example.bdd.BaseIntegrationTest;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.validation.constraints.AssertTrue;
 import java.util.HashMap;
 import java.util.List;
 
@@ -16,9 +19,13 @@ import static org.junit.Assert.assertTrue;
 public class ConverterSteps extends BaseIntegrationTest {
     HashMap<String, Object> dataHolder = new HashMap<>();
     Boolean lastCheck = false;
+    String lastResult = "";
 
     @Autowired
     AvailableConversionsUseCase availableConversionsUseCase;
+
+    @Autowired
+    NumberConverterUseCase numberConverterUseCase;
 
     @Given("^the list of providers$")
     public void the_list_of_providers() throws Throwable {
@@ -49,14 +56,12 @@ public class ConverterSteps extends BaseIntegrationTest {
     }
 
     @When("^input is \"([^\"]*)\"$")
-    public void input_is(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    public void input_is(String input) throws Throwable {
+        lastResult = numberConverterUseCase.run(input, (String)dataHolder.get("convertFrom"), (String)dataHolder.get("convertTo"));
     }
 
     @Then("^output is \"([^\"]*)\"$")
-    public void output_is(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    public void output_is(String expected) throws Throwable {
+        Assert.assertEquals(expected, lastResult);
     }
 }
