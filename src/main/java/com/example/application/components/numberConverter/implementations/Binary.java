@@ -7,7 +7,14 @@ import org.springframework.stereotype.Component;
 public class Binary extends NumberConverterBaseClass {
     @Override
     public Integer to_decimal(String value) {
-        return 0;
+        int result = 0;
+        for(int pos = 0; pos < value.length(); pos++){
+            result *= 2; //Shift to the left
+            if(value.charAt(pos) == '1'){
+                result++;
+            }
+        }
+        return result;
     }
     @Override
     public String from_decimal(Integer value) {
