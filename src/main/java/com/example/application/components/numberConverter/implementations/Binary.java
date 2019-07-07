@@ -11,6 +11,16 @@ public class Binary extends NumberConverterBaseClass {
     }
     @Override
     public String from_decimal(Integer value) {
-        return "";
+        StringBuilder builder = new StringBuilder();
+        while(value > 0){
+            if(value % 2 == 0){
+                builder.append('0');
+            } else {
+                builder.append('1');
+            }
+            value /= 2;
+        }
+        builder.reverse();
+        return builder.toString();
     }
 }
