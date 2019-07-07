@@ -14,3 +14,8 @@ Feature: can convert?
         And I want to convert to "Decimal"
         When input is "DEADBEEF"
         Then output is "3735928559"
+    Scenario: Convert Hexadecimal to Decimal
+        Given I want to convert from "Decimal"
+        And I want to convert to "Hexadecimal"
+        When input is "1234567"
+        Then output is "12D687"

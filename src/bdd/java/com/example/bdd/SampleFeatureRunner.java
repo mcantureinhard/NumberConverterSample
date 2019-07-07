@@ -11,5 +11,5 @@ import org.springframework.test.context.ActiveProfiles;
         , features = "src/bdd/resources/features"
         , tags = {}
 )
-public class DemoFeatureRunner {
+public class SampleFeatureRunner {
 }
