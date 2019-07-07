@@ -8,7 +8,7 @@ import org.springframework.test.context.ActiveProfiles;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = {"pretty", "html:target/cucumber", "junit:target/junit-report.xml"}
-        , features = "src/bdd/resources/features/converters_exist.feature"
+        , features = "src/bdd/resources/features"
         , tags = {}
 )
 public class DemoFeatureRunner {

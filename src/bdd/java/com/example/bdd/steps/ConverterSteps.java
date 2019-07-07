@@ -37,4 +37,28 @@ public class ConverterSteps extends BaseIntegrationTest {
         assertTrue(lastCheck);
         lastCheck = false;
     }
+
+    @Given("^I want to convert from \"([^\"]*)\"$")
+    public void i_want_to_convert_from(String arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Given("^I want to convert to \"([^\"]*)\"$")
+    public void i_want_to_convert_to(String arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @When("^input is \"([^\"]*)\"$")
+    public void input_is(String arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Then("^output is \"([^\"]*)\"$")
+    public void output_is(String arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
 }
