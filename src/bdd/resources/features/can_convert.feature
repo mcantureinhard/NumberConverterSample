@@ -9,3 +9,8 @@ Feature: can convert?
         And I want to convert to "Decimal"
         When input is "111101"
         Then output is "61"
+    Scenario: Convert Decimal to Hexadecimal
+        Given I want to convert from "Hexadecimal"
+        And I want to convert to "Decimal"
+        When input is "DEADBEEF"
+        Then output is "3735928559"
