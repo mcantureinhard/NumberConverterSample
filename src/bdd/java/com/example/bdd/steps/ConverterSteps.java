@@ -39,15 +39,13 @@ public class ConverterSteps extends BaseIntegrationTest {
     }
 
     @Given("^I want to convert from \"([^\"]*)\"$")
-    public void i_want_to_convert_from(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    public void i_want_to_convert_from(String from) throws Throwable {
+        dataHolder.put("convertFrom", from);
     }
 
     @Given("^I want to convert to \"([^\"]*)\"$")
-    public void i_want_to_convert_to(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    public void i_want_to_convert_to(String to) throws Throwable {
+        dataHolder.put("converterTo", to);
     }
 
     @When("^input is \"([^\"]*)\"$")
