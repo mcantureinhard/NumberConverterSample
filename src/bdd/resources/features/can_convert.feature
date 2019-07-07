@@ -20,12 +20,12 @@ Feature: can convert?
         When input is "1234567"
         Then output is "12D687"
      Scenario: Convert Decimal to Roman
-         Given I want to convert from "Roman"
-         And I want to convert to "Decimal"
+         Given I want to convert from "Decimal"
+         And I want to convert to "Roman"
          When input is "58"
          Then output is "LVIII"
      Scenario: Convert Roman to Decimal
-         Given I want to convert from "Decimal"
-         And I want to convert to "Roman"
+         Given I want to convert from "Roman"
+         And I want to convert to "Decimal"
          When input is "MCMXCIV"
          Then output is "1994"
