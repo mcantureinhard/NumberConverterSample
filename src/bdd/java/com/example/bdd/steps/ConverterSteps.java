@@ -52,7 +52,7 @@ public class ConverterSteps extends BaseIntegrationTest {
 
     @Given("^I want to convert to \"([^\"]*)\"$")
     public void i_want_to_convert_to(String to) throws Throwable {
-        dataHolder.put("converterTo", to);
+        dataHolder.put("convertTo", to);
     }
 
     @When("^input is \"([^\"]*)\"$")
