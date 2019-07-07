@@ -6,12 +6,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class Decimal extends NumberConverterBaseClass {
     @Override
-    public Integer to_decimal(String value) {
-        return Integer.parseInt(value);
+    public Long to_decimal(String value) {
+        return Long.parseLong(value);
     }
 
     @Override
-    public String from_decimal(Integer value) {
-        return Integer.toString(value);
+    public String from_decimal(Long value) {
+        return Long.toString(value);
     }
 }

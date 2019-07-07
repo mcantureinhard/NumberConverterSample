@@ -6,8 +6,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class Binary extends NumberConverterBaseClass {
     @Override
-    public Integer to_decimal(String value) {
-        int result = 0;
+    public Long to_decimal(String value) {
+        long result = 0;
         for(int pos = 0; pos < value.length(); pos++){
             result *= 2; //Shift to the left
             if(value.charAt(pos) == '1'){
@@ -17,7 +17,7 @@ public class Binary extends NumberConverterBaseClass {
         return result;
     }
     @Override
-    public String from_decimal(Integer value) {
+    public String from_decimal(Long value) {
         StringBuilder builder = new StringBuilder();
         while(value > 0){
             if(value % 2 == 0){

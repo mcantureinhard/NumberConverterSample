@@ -6,11 +6,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class Roman extends NumberConverterBaseClass {
     @Override
-    public Integer to_decimal(String value) {
-        return 0;
+    public Long to_decimal(String value) {
+        return (long)0;
     }
     @Override
-    public String from_decimal(Integer value) {
+    public String from_decimal(Long value) {
         return "";
     }
 }

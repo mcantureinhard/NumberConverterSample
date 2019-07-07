@@ -13,7 +13,7 @@ public class NumberConverterUseCase {
     public String run(String input, String from, String to){
         NumberConverterBaseClass converterFrom = availableConvertersService.getConverterByName(from);
         NumberConverterBaseClass converterTo = availableConvertersService.getConverterByName(to);
-        Integer interim = converterFrom.to_decimal(input);
+        Long interim = converterFrom.to_decimal(input);
         String result = converterTo.from_decimal(interim);
         return result;
     }
