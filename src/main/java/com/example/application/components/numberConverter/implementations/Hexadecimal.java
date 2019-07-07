@@ -17,6 +17,18 @@ public class Hexadecimal extends NumberConverterBaseClass {
     }
     @Override
     public String from_decimal(Long value) {
-        return "";
+        StringBuilder builder = new StringBuilder();
+        while(value > 0){
+            long next = value % 16;
+            if(next < 10){
+                builder.append(next);
+            } else {
+                char nextChar = (char)(next - 10 + 'A');
+                builder.append(nextChar);
+            }
+            value /= 16;
+        }
+        builder.reverse();
+        return builder.toString();
     }
 }
