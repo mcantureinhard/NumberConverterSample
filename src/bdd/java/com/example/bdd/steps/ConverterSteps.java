@@ -28,40 +28,40 @@ public class ConverterSteps extends BaseIntegrationTest {
     NumberConverterUseCase numberConverterUseCase;
 
     @Given("^the list of providers$")
-    public void the_list_of_providers() throws Throwable {
+    public void the_list_of_providers() {
         List<String> availableConversions = availableConversionsUseCase.run();
         dataHolder.put("availableConversions", availableConversions);
     }
 
     @When("^I check \"([^\"]*)\" is there$")
-    public void i_check_is_there(String name) throws Throwable {
+    public void i_check_is_there(String name) {
         List<String> availableConversion = (List<String>) dataHolder.get("availableConversions");
         lastCheck = availableConversion.contains(name);
     }
 
     @Then("^It should be true$")
-    public void it_should_be_true() throws Throwable {
+    public void it_should_be_true() {
         assertTrue(lastCheck);
         lastCheck = false;
     }
 
     @Given("^I want to convert from \"([^\"]*)\"$")
-    public void i_want_to_convert_from(String from) throws Throwable {
+    public void i_want_to_convert_from(String from) {
         dataHolder.put("convertFrom", from);
     }
 
     @Given("^I want to convert to \"([^\"]*)\"$")
-    public void i_want_to_convert_to(String to) throws Throwable {
+    public void i_want_to_convert_to(String to)  {
         dataHolder.put("convertTo", to);
     }
 
     @When("^input is \"([^\"]*)\"$")
-    public void input_is(String input) throws Throwable {
+    public void input_is(String input)  {
         lastResult = numberConverterUseCase.run(input, (String)dataHolder.get("convertFrom"), (String)dataHolder.get("convertTo"));
     }
 
     @Then("^output is \"([^\"]*)\"$")
-    public void output_is(String expected) throws Throwable {
+    public void output_is(String expected)  {
         Assert.assertEquals(expected, lastResult);
     }
 }
